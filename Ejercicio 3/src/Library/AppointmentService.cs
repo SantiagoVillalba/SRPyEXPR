@@ -5,6 +5,13 @@ namespace Library
 {
     public class AppointmentService
     {
+        /* Segun el principio SRP este codigo esta mal, ya que una consulta solo deberia de saber la fecha y el lugar de la consulta
+        , pero como vemos en este codigo sabe tanto datos del paciente, como del doctor, cosas que deberian de estar en otras clases, conociendo
+        sus propios datos. Esta clase presentada en el codigo deberia de ser cambiada varias veces, en el caso de que queramos cambiar datos tanto
+        del paciente como del doctor, por lo tanto no cumple con el principio SRP. Sobre el patron Expert este codigo tambien esta mal, ya que los datos tanto 
+        del paciente como del doctor, la clase AppointmentService no es la experta en estos datos, por eso no lo cumple el patron. Para arreglar este codigo
+        deberiamos agregar una clase Doctor y una clase Persona, para asi que cada una se encargue de conocer los datos de ellos mismos.  */
+
         public static string CreateAppointment(string name, string id, string phoneNumber, DateTime date, string appoinmentPlace, string doctorName)
         {
             StringBuilder stringBuilder = new StringBuilder("Scheduling appointment...\n");
