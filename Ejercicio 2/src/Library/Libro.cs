@@ -8,7 +8,7 @@ namespace SRP
         public string Titulo { get ; }
         public string Autor { get ; }
         public string Codigo { get ;  }
-
+        public Biblioteca Biblioteca {get ; set;}
         public Libro(String titulo, String autor, String codigo)
         {
             this.Titulo = titulo;
@@ -18,8 +18,7 @@ namespace SRP
 
         public void AlmacenarLibro(String sector, String estante)
         {
-            Biblioteca biblioteca= new Biblioteca();
-            biblioteca.AlmacenarLibro(sector,estante);
+            this.Biblioteca.AlmacenarLibro(sector,estante);
         }
 
     }
