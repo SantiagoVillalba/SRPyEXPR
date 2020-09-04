@@ -18,6 +18,15 @@ namespace Library
                 this.Especialidad=especialidad;
             }
         }
+        public static bool DoctorValido(Doctor doctor)
+        {
+            if(string.IsNullOrEmpty(doctor.Name) || string.IsNullOrEmpty(doctor.Especialidad))
+            {
+                return false;
+            }
+        }
+
+
 
     }
 }
