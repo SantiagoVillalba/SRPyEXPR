@@ -5,11 +5,17 @@ namespace Library
 {
     public class AppointmentService
     {
-        private static int codigoUnico;
+        private static int codigo=0;
+        public int CodigoUnico{get;}
+        public DateTime Date{get;set;}
+        public string AppointmentPlace{get;set;}
 
         public AppointmentService()
         {
-            codigoUnico++;
+            codigo++;
+            this.CodigoUnico=codigo;
+
+
         }
         public static string CreateAppointment(DateTime date, string appoinmentPlace,Paciente paciente, Doctor doctor)
         {
@@ -25,12 +31,12 @@ namespace Library
             }
             if (Paciente.PacienteValido(paciente))
             {
-                stringBuilder.Append("Unable to schedule appointment, Pacient is invalid\n");
+                stringBuilder.Append("Unable to schedule appointment,the Pacient is invalid\n");
                 isValid = false;
             }
             if (Doctor.DoctorValido(doctor))
             {
-                stringBuilder.Append("Unable to schedule appointment, Doctor is invalid\n");
+                stringBuilder.Append("Unable to schedule appointment,the Doctor is invalid\n");
                 isValid = false;
             }
             if (isValid)
@@ -40,7 +46,7 @@ namespace Library
             
             
 
-            return stringBuilder.ToString();
+            return stringBuilder.ToString(); 
         }
 
     }
