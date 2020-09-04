@@ -8,16 +8,20 @@ namespace Library
         private static int codigo=0;
         public int CodigoUnico{get;}
         public DateTime Date{get;set;}
+
+        public Paciente Paciente{get;set;}
+        public Doctor Doctor{get;set;}
         public string AppointmentPlace{get;set;}
 
-        public AppointmentService()
+        public AppointmentService(DateTime date, string appoinmentPlace,Paciente paciente, Doctor doctor)
         {
             codigo++;
             this.CodigoUnico=codigo;
+            
 
 
         }
-        public static string CreateAppointment(DateTime date, string appoinmentPlace,Paciente paciente, Doctor doctor)
+        public static AppointmentService CreateAppointment(DateTime date, string appoinmentPlace,Paciente paciente, Doctor doctor)
         {
             StringBuilder stringBuilder = new StringBuilder("Scheduling appointment...\n");
             Boolean isValid = true;
@@ -43,10 +47,15 @@ namespace Library
             {
                 stringBuilder.Append("Appoinment Scheduled");
             }
-            
+
+            Console.WriteLine(stringBuilder.ToString());
+            if (isValid)
+            {
+
+            }
             
 
-            return stringBuilder.ToString(); 
+            return ; 
         }
 
     }
