@@ -1,7 +1,10 @@
 ﻿using System;
 
 namespace SRP
-{
+{   
+    /* En la solucion lo unico que en la clase Libro es eliminar la responsabilidad de conocer el estante y el sector en el que esta ubicado 
+    dicho libro, ya que estos no tienen sentidos encontrarlos en la clase Libro, y el metodo almacenar libro, que no tiene sentido alguno que un libro se almacene a si mismo. */
+
     public class Libro
     {
 
