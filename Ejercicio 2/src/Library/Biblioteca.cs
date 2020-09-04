@@ -16,7 +16,6 @@ namespace SRP
 
     public class Biblioteca
     {
-        //public ArrayList Libros{get; set;}
         public Dictionary<Libro,ArrayList> Libros{get;set;}
         public Biblioteca()
         {
