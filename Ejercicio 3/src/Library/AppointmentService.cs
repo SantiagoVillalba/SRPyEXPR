@@ -15,13 +15,20 @@ namespace Library
 
         public AppointmentService(DateTime date, string appoinmentPlace,Paciente paciente, Doctor doctor)
         {
-            codigo++;
-            this.CodigoUnico=codigo;
+            if (CreateAppointment(date,appoinmentPlace,paciente,doctor))
+            {
+                codigo++;
+                this.CodigoUnico=codigo;
+                this.Date=date;
+                this.AppointmentPlace=appoinmentPlace;
+                this.Paciente=paciente;
+                this.Doctor=doctor;
+            }
             
 
 
         }
-        public static AppointmentService CreateAppointment(DateTime date, string appoinmentPlace,Paciente paciente, Doctor doctor)
+        public static bool CreateAppointment(DateTime date, string appoinmentPlace,Paciente paciente, Doctor doctor)
         {
             StringBuilder stringBuilder = new StringBuilder("Scheduling appointment...\n");
             Boolean isValid = true;
@@ -51,11 +58,15 @@ namespace Library
             Console.WriteLine(stringBuilder.ToString());
             if (isValid)
             {
-
+                return true;
+            }
+            else
+            {
+                return false;
             }
             
 
-            return ; 
+            
         }
 
     }
