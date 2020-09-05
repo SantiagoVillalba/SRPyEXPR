@@ -33,11 +33,11 @@ namespace Library
         {
             if(string.IsNullOrEmpty(paciente.Name) || string.IsNullOrEmpty(paciente.Edad)|| string.IsNullOrEmpty(paciente.Id)|| string.IsNullOrEmpty(paciente.Telefono))
             {
-                return false;
+                return true;
             }
             else
             {
-                return true;
+                return false;
             }
         }
 

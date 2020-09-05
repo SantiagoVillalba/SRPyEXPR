@@ -22,11 +22,11 @@ namespace Library
         {
             if(string.IsNullOrEmpty(doctor.Name) || string.IsNullOrEmpty(doctor.Especialidad))
             {
-                return false;
+                return true;
             }
             else
             {
-                return true;
+                return false;
             }
         }
 
