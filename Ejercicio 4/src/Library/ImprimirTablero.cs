@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 using System.Text;
 namespace PII_Game_Of_Life
 {
@@ -9,7 +10,7 @@ namespace PII_Game_Of_Life
             //bool[,] b //variable que representa el tablero
             int width = board.GetLength(0); //variabe que representa el ancho del tablero
             int height = board.GetLength(1); //variabe que representa altura del tablero
-            While (true)
+            while (true)
             {
                 Console.Clear();
                 StringBuilder s = new StringBuilder();
@@ -32,6 +33,8 @@ namespace PII_Game_Of_Life
                 //=================================================
                 //Invocar método para calcular siguiente generación
                 //=================================================
+                board = Logica.Actualizar(board);
+
                 Thread.Sleep(300);
             }
         }
