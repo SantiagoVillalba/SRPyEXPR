@@ -8,7 +8,7 @@ namespace PII_Game_Of_Life
         {
             Archivo primer = new Archivo("../../nuevo.txt");
             
-            //Tablero tablero = new Tablero(primer.Board);
+            Tablero tablero = new Tablero(primer.Board);
             Imprimir.MostrarTablero(primer.Board);
 
         }
