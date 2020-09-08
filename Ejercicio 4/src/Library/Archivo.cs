@@ -4,7 +4,7 @@ namespace PII_Game_Of_Life
 {
     public class Archivo
     {
-        public bool [,] board {get;set;}
+        public bool [,] Board {get;set;}
 
         public Archivo(string url)
         {

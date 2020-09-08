@@ -11,9 +11,5 @@ namespace PII_Game_Of_Life
             this.Board=board;
         }
         
-        public void ActualizarTablero()
-        {
-            this.Board= Logica.Actualizar(this.Board);
-        }
     }
 }
